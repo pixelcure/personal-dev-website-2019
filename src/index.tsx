@@ -1,26 +1,40 @@
 import * as React from "react";
 import { render } from "react-dom";
-import styled from 'styled-components'
-
+import styled from "styled-components";
+import { cssConfig } from "./configs/cssConfig";
+import Header from "./Header";
+import Introduction from "./Introduction";
 import "./styles.css";
 
-const Button = styled.a`
-  /* This renders the buttons above... Edit me! */
-  display: inline-block;
-  border-radius: 3px;
-  padding: 0.5rem 0;
-  margin: 0.5rem 1rem;
-  width: 11rem;
-  background: transparent;
-  color: white;
-  border: 2px solid red;
-`
+const SiteContainer = styled.div`
+  border-top: 0.5rem solid ${cssConfig.colors.teal};
+  padding: 2rem 1.5rem;
+`;
 
-function App() {
+const Inner = styled.main`
+  margin: 0 auto;
+  width: 100%;
+
+  @media (min-width: ${cssConfig.media.medium}) {
+    width: 97rem;
+  }
+
+  @media (min-width: ${cssConfig.media.large}) {
+    width: 117rem;
+  }
+`;
+
+const Site = () => {
   return (
-    <Button href='#'>Testing</Button>
+    <SiteContainer>
+      <Inner>
+        <Header />
+        <Introduction />
+        {/* <Information /> */}
+      </Inner>
+    </SiteContainer>
   );
-}
+};
 
 const rootElement = document.getElementById("root");
-render(<App />, rootElement);
+render(<Site />, rootElement);
