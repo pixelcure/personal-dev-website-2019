@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { cssConfig } from '../configs/cssConfig';
 import HeaderLinks from './HeaderLinks';
 
-const logoPath = `http://pixelcureinteractive.com/docs/paulthibedeau-logo.svg`;
+const logoPath = `http://paulthibedeau.com/paulthibedeau-logo.svg`;
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -46,8 +46,8 @@ const PDFDownload = styled.a`
 `;
 
 const Header = (): JSX.Element => (
-  <HeaderContainer className='top'>
-    <PDFDownload href='/docs/PaulThibedeauResume2019.pdf' target='_blank' title='Download as PDF'>.PDF</PDFDownload>
+  <HeaderContainer>
+    <PDFDownload href='http://paulthibedeau.com/docs/PaulThibedeauResume2019.pdf' target='_blank' title='Download as PDF'>.PDF</PDFDownload>
     <Logo>
       <a href='/' title='Paul Thibedeau'>
         <img src={logoPath} alt='Paul Thibedeau' />

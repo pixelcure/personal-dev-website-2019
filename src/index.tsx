@@ -35,7 +35,7 @@ const ScrollToTop = styled.a`
 
 const Site = () => {
   return (
-    <SiteContainer>
+    <SiteContainer className='top'>
       <Inner>
         <Header />
         <Introduction />
