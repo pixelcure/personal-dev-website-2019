@@ -1,10 +1,12 @@
-import * as React from "react";
-import { render } from "react-dom";
-import styled from "styled-components";
-import { cssConfig } from "./configs/cssConfig";
-import Header from "./Header";
-import Introduction from "./Introduction";
-import "./styles.css";
+import * as React from 'react';
+import { render } from 'react-dom';
+import styled from 'styled-components';
+import { cssConfig } from './configs/cssConfig';
+import Header from './Header';
+import Introduction from './Introduction';
+import Information from './Information';
+import './styles.css';
+import jumpTo from './helpers/jump';
 
 const SiteContainer = styled.div`
   border-top: 0.5rem solid ${cssConfig.colors.teal};
@@ -16,11 +18,18 @@ const Inner = styled.main`
   width: 100%;
 
   @media (min-width: ${cssConfig.media.medium}) {
-    width: 97rem;
+    width: 92rem;
   }
+`;
 
-  @media (min-width: ${cssConfig.media.large}) {
-    width: 117rem;
+const ScrollToTop = styled.a`
+  display: flex;
+  font-size: 4rem;
+  justify-content: center;
+  margin: 3rem 0;
+
+  &:before {
+    content: '🔝';
   }
 `;
 
@@ -30,11 +39,11 @@ const Site = () => {
       <Inner>
         <Header />
         <Introduction />
-        {/* <Information /> */}
+        <Information />
+        <ScrollToTop title='Scroll to Top' href='#' onClick={() => jumpTo('.top')}></ScrollToTop>
       </Inner>
     </SiteContainer>
   );
 };
 
-const rootElement = document.getElementById("root");
-render(<Site />, rootElement);
+render(<Site />, document.getElementById('root'));

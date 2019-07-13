@@ -351,7 +351,16 @@ template {
 }
 
 /* Base Scaffolding */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700i&display=swap');
+
+a {
+  color: #6E918E;
+  text-decoration: none;
+}
+
+a:hover {
+  border: 0;
+}
 
 html {
   font-size: 10px;

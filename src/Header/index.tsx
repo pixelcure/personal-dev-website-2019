@@ -1,20 +1,25 @@
-import * as React from "react";
-import styled from "styled-components";
-import HeaderLinks from "./HeaderLinks";
+import * as React from 'react';
+import styled from 'styled-components';
+import { cssConfig } from '../configs/cssConfig';
+import HeaderLinks from './HeaderLinks';
 
 const logoPath = `http://pixelcureinteractive.com/docs/paulthibedeau-logo.svg`;
 
 const HeaderContainer = styled.header`
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   width: 100%;
+
+  @media (min-width: ${cssConfig.media.small}) {
+    margin: 1rem 0 3rem;
+  }
 `;
 
 const Logo = styled.div`
   align-self: center;
   justify-content: center;
-  padding: 2rem 0 1rem;
+  padding: 1rem 0 1rem;
   width: 30rem;
 
   img {
@@ -23,11 +28,29 @@ const Logo = styled.div`
   }
 `;
 
+const PDFDownload = styled.a`
+  background: ${cssConfig.colors.teal};
+  color: #FFF;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @media (min-width: ${cssConfig.media.small}) {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+`;
+
 const Header = (): JSX.Element => (
-  <HeaderContainer>
+  <HeaderContainer className='top'>
+    <PDFDownload href='/docs/PaulThibedeauResume2019.pdf' target='_blank' title='Download as PDF'>.PDF</PDFDownload>
     <Logo>
-      <a href="/" title="Paul Thibedeau">
-        <img src={logoPath} alt="Paul Thibedeau" />
+      <a href='/' title='Paul Thibedeau'>
+        <img src={logoPath} alt='Paul Thibedeau' />
       </a>
     </Logo>
     <HeaderLinks />
