@@ -2,6 +2,8 @@ export default [
   'Visual Studio Code',
   'Git',
   'iTerm / Terminal',
+  'Slack',
+  'Google Hangouts',
   'Sketch & Adobe Creative CC Suite ',
   'InVision',
   'Google Lighthouse',

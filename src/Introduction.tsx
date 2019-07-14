@@ -39,13 +39,19 @@ const IntroductionContainer = styled.div`
   }
 `;
 
+const MobileOnly = styled.dd`
+  @media (min-width: ${cssConfig.media.small}) {
+    display: none;
+  }
+`;
+
 const Introduction = (): JSX.Element => (
   <IntroductionContainer>
     <p>
       <span>I am a front end engineer living in New York, New York.</span> I’m a
       collaborator and enjoy solving problems with smart, creative, and tech
       savvy people. I believe in developing solutions for cross-device
-      platforms, from mobile to desktop. Look below to learn more about <a href='#' title='Tech &amp; Approaches' onClick={() => jumpTo('.tech')}>tech</a> and <a href='#' title='Tools &amp; Software' onClick={() => jumpTo('.tools')}>tools</a> I enjoy using, as well as <a href='#' title='Job Experience' onClick={() => jumpTo('.experience')}>companies</a> I've had the pleasure being with.
+      platforms, from mobile to desktop. <MobileOnly>Look below to learn more about <a href='#' title='Tech &amp; Approaches' onClick={() => jumpTo('.tech')}>tech</a> and <a href='#' title='Tools &amp; Software' onClick={() => jumpTo('.tools')}>tools</a> I enjoy using, as well as <a href='#' title='Job Experience' onClick={() => jumpTo('.experience')}>companies</a> I've had the pleasure being with.</MobileOnly>
     </p>
   </IntroductionContainer>
 );

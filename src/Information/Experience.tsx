@@ -32,7 +32,7 @@ const Year = styled.span`
   color: #FFF;
   display: block;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 400;
   height: 2rem;
   line-height: 2rem;
   padding: 1rem;
@@ -46,7 +46,7 @@ const Company = styled.span`
   font-weight: 600;
   letter-spacing: 0.04rem;
   line-height: 2rem;
-  padding: 0.8rem 0 0 1.5rem;
+  padding: 0.9rem 0 0 1.5rem;
   text-transform: uppercase;
 
   @media (min-width: ${cssConfig.media.small}) {
@@ -66,6 +66,7 @@ const DateLocation = styled.span`
     color: ${cssConfig.colors.copy};
     font-size: 1.8rem;
     font-weight: 600;
+    vertical-align: -0.1rem;
   }
 
   em {
@@ -76,6 +77,10 @@ const DateLocation = styled.span`
 
   @media (min-width: ${cssConfig.media.small}) {
     font-size: 1.4rem;
+
+    span {
+      vertical-align: auto;
+    }
   }
 
   @media (min-width: ${cssConfig.media.medium}) {
@@ -96,7 +101,7 @@ const handleJob = (job: IJob, index: number) => (
         <em>{job.title}</em>
       </DateLocation>
     </JobTop>
-    <List bulletList type={job.company} data={job.details} />
+    <List type={job.company} data={job.details} roleList />
   </ExperienceStyles>
 );
 

@@ -16,7 +16,7 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const Logo = styled.div`
+const Logo = styled.a`
   align-self: center;
   justify-content: center;
   padding: 1rem 0 1rem;
@@ -28,11 +28,11 @@ const Logo = styled.div`
   }
 `;
 
-const PDFDownload = styled.a`
+const ResumeDownload = styled.a`
   background: ${cssConfig.colors.teal};
   color: #FFF;
   display: block;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   padding: 0.5rem;
   position: absolute;
@@ -47,11 +47,15 @@ const PDFDownload = styled.a`
 
 const Header = (): JSX.Element => (
   <HeaderContainer>
-    <PDFDownload href='http://paulthibedeau.com/docs/PaulThibedeauResume2019.pdf' target='_blank' title='Download as PDF'>.PDF</PDFDownload>
-    <Logo>
-      <a href='/' title='Paul Thibedeau'>
-        <img src={logoPath} alt='Paul Thibedeau' />
-      </a>
+    <ResumeDownload
+      href='http://paulthibedeau.com/docs/PaulThibedeauResume2019.pdf'
+      target='_blank'
+      title='Download Resume'
+    >
+      Resume
+    </ResumeDownload>
+    <Logo href='/' title='Paul Thibedeau'>
+      <img src={logoPath} alt='Paul Thibedeau' />
     </Logo>
     <HeaderLinks />
   </HeaderContainer>

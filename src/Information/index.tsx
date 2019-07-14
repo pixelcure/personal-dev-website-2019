@@ -4,6 +4,7 @@ import { cssConfig } from '../configs/cssConfig';
 import technologies from '../configs/technologies';
 import tools from '../configs/tools';
 import experience from '../configs/experience';
+import softSkills from '../configs/softSkills'
 import Column from '../Column';
 import Experience from './Experience';
 import Education from './Education';
@@ -15,11 +16,33 @@ const InformationContainer = styled.div`
   }
 `;
 
-const Introduction = (): JSX.Element => (
+const renderSkills = () => (
+  <>
+    <List
+      className='tech'
+      data={technologies}
+      type='tool'
+      headline='Tech &amp; Approaches'
+    />
+    <List
+      className='tools'
+      data={tools}
+      type='tool'
+      headline='Tools &amp; Software'
+    />
+    <List
+      className='soft-skills'
+      data={softSkills}
+      type='soft-skills'
+      headline='Soft Skills'
+    />
+  </>
+);
+
+const Information = (): JSX.Element => (
   <InformationContainer>
     <Column>
-      <List className='tech' data={technologies} type='tool' headline='Tech &amp; Approaches' />
-      <List className='tools' data={tools} type='tool' headline='Tools &amp; Software' />
+      {renderSkills()}
     </Column>
     <Column className='wider experience'>
       <Experience jobs={experience} />
@@ -28,4 +51,4 @@ const Introduction = (): JSX.Element => (
   </InformationContainer>
 );
 
-export default Introduction;
+export default Information;

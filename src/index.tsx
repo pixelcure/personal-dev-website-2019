@@ -6,7 +6,6 @@ import Header from './Header';
 import Introduction from './Introduction';
 import Information from './Information';
 import './styles.css';
-import jumpTo from './helpers/jump';
 
 const SiteContainer = styled.div`
   border-top: 0.5rem solid ${cssConfig.colors.teal};
@@ -22,17 +21,6 @@ const Inner = styled.main`
   }
 `;
 
-const ScrollToTop = styled.a`
-  display: flex;
-  font-size: 4rem;
-  justify-content: center;
-  margin: 3rem 0;
-
-  &:before {
-    content: '🔝';
-  }
-`;
-
 const Site = () => {
   return (
     <SiteContainer className='top'>
@@ -40,7 +28,6 @@ const Site = () => {
         <Header />
         <Introduction />
         <Information />
-        <ScrollToTop title='Scroll to Top' href='#' onClick={() => jumpTo('.top')}></ScrollToTop>
       </Inner>
     </SiteContainer>
   );

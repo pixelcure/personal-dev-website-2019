@@ -19,6 +19,7 @@ export default [
   'Browser Performance',
   'Atomic Design',
   'Agile',
+  'Remote',
   'Electron',
   'Markdown'
 ];
