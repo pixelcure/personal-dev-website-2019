@@ -39,7 +39,9 @@ const IntroductionContainer = styled.div`
   }
 `;
 
-const MobileOnly = styled.dd`
+const MobileOnly = styled.span`
+  font-weight: normal;
+
   @media (min-width: ${cssConfig.media.small}) {
     display: none;
   }
