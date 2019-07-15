@@ -10,8 +10,10 @@ interface IProps {
 
 const ColumnStyles = styled.div`
   width: 100%;
+  margin-bottom: 3.5rem;
 
   @media (min-width: ${cssConfig.media.small}) {
+    margin-bottom: 0;
     width: 33%;
 
     &.wider {
