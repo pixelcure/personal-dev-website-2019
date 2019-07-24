@@ -15,6 +15,7 @@ const ColumnStyles = styled.div`
   @media (min-width: ${cssConfig.media.small}) {
     margin-bottom: 0;
     width: 33%;
+
     &.wider {
       padding-left: 2rem;
       width: 66%;
